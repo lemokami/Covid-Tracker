@@ -1,6 +1,6 @@
 const apiUrl = 'https://covid19.mathdro.id/api';
 
-const FetchInfected = async () => {
+export const FetchInfected = async () => {
   const response = await fetch(apiUrl);
   const data = await response.json();
 
@@ -10,5 +10,3 @@ const FetchInfected = async () => {
     recovered: data.recovered,
   };
 };
-
-export default FetchInfected;

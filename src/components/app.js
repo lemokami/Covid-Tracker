@@ -1,16 +1,15 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
-import FetchInfected from '../api/FetchInfected';
+import { FetchInfected } from '../api';
 
 const App = () => {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    let fetchData = FetchInfected();
-    setData(fetchData);
+    FetchInfected().then((data) => setData(data));
   }, []);
 
-  return <div>dffs</div>;
+  return <pre>{JSON.stringify(data.confirmed)}</pre>;
 };
 
 export default App;
