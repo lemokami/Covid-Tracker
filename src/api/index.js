@@ -10,3 +10,15 @@ export const FetchInfected = async () => {
     recovered: data.recovered,
   };
 };
+
+export const FetchCountries = async () => {
+  const response = await fetch(`${apiUrl}/countries`);
+  const data = await response.json();
+  return data;
+};
+
+export const FetchCountry = async (country) => {
+  const response = await fetch(`${apiUrl}/countries/${country}`);
+  const data = await response.json();
+  return data;
+};
