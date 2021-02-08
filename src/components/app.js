@@ -8,18 +8,24 @@ const App = () => {
   const [data, setData] = useState({});
   const [countryList, setCountryList] = useState([]);
 
-  function getCountryData(country) {
-    if (country !== '') FetchCountry(country).then((data) => setData(data));
-    else FetchInfected().then((data) => setData(data));
-  }
-
-  useEffect(() => {
+  function getGlobalData() {
     FetchInfected().then((data) => setData(data));
+  }
+  function getCountryList() {
     FetchCountries().then((data) => {
       data.countries.forEach((country) =>
         setCountryList((currList) => [...currList, country.name])
       );
     });
+  }
+  function getCountryData(country) {
+    if (country !== '') FetchCountry(country).then((data) => setData(data));
+    else getGlobalData();
+  }
+
+  useEffect(() => {
+    getGlobalData();
+    getCountryList();
   }, []);
   return (
     <div className='container'>
