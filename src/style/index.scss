@@ -1,1 +1,145 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@500&display=swap');
+
+$color-primary: #0a0a0a;
+$color-secondary: #fafafa;
+$color-grey: #7d7d7d;
+$color-red: #cd4c4c;
+$color-orange: #e78147;
+$color-green: #36ca95;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: $color-primary;
+  min-height: 100vh;
+}
+
+//app.js styles
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70vh;
+  width: 100%;
+}
+
+.heading {
+  font-family: 'Roboto', sans-serif;
+  font-size: 4rem;
+  margin: 150px auto;
+  font-weight: 500;
+
+  &--grey {
+    color: $color-grey;
+  }
+}
+.content {
+  width: 80%;
+}
+// selectmenu styles
+
+.menu {
+  text-align: center;
+  &__select {
+    padding: 10px;
+    border: 0;
+    border-bottom: 2px solid $color-primary;
+    cursor: pointer;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+// card styles
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: $color-secondary;
+  padding: 30px;
+  height: 200px;
+  min-width: 400px;
+  border-radius: 20px;
+
+  //parent style but has the same name
+  &-list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+
+  &--red {
+    background-color: $color-red;
+  }
+
+  &--orange {
+    background-color: $color-orange;
+  }
+
+  &--green {
+    background-color: $color-green;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+  &__count {
+    font-size: 3rem;
+  }
+  &__subcount {
+    font-size: 1rem;
+  }
+  &--bold {
+    font-weight: bold;
+  }
+}
+
+//mobile & tab styles
+@media (max-width: 1240px) {
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+    margin: 80px auto;
+  }
+  .content {
+    width: 100%;
+  }
+
+  // card styles
+  .card {
+    padding: 30px;
+    height: 200px;
+    min-width: 100%;
+    margin: 10px auto;
+
+    //parent style but has the same name
+    &-list {
+      flex-direction: column;
+      margin-top: 50px;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+    }
+    &__count {
+      font-size: 2.5rem;
+    }
+    &__subcount {
+      font-size: 1rem;
+    }
+  }
+}

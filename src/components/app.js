@@ -11,6 +11,12 @@ const App = () => {
   function getGlobalData() {
     FetchInfected().then((data) => setData(data));
   }
+
+  function getCountryData(country) {
+    if (country !== '') FetchCountry(country).then((data) => setData(data));
+    else getGlobalData();
+  }
+
   function getCountryList() {
     FetchCountries().then((data) => {
       data.countries.forEach((country) =>
@@ -18,22 +24,24 @@ const App = () => {
       );
     });
   }
-  function getCountryData(country) {
-    if (country !== '') FetchCountry(country).then((data) => setData(data));
-    else getGlobalData();
-  }
 
   useEffect(() => {
     getGlobalData();
     getCountryList();
   }, []);
+
   return (
-    <div className='container'>
-      <SelectMenu countryList={countryList} getCountryData={getCountryData} />
-      <div className='country'>
-        <Card color='orange' type='confirmed' number={data.confirmed} />
-        <Card color='red' type='deaths' number={data.deaths} />
-        <Card color='green' type='recovered' number={data.recovered} />
+    <div className='container main'>
+      <h1 className='heading'>
+        <span className='heading--grey'>COVID</span> TRACKER
+      </h1>
+      <div className='content'>
+        <SelectMenu countryList={countryList} getCountryData={getCountryData} />
+        <div className='card-list'>
+          <Card color='orange' type='Confirmed' number={data.confirmed} />
+          <Card color='red' type='Deaths' number={data.deaths} />
+          <Card color='green' type='Recovered' number={data.recovered} />
+        </div>
       </div>
     </div>
   );

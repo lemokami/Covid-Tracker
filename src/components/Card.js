@@ -1,9 +1,11 @@
 import { h } from 'preact';
+import Counter from './Counter';
 
 const Card = ({ color, type, number }) => {
   return (
-    <div>
-      {color}-{type}-{{ ...number }.value}
+    <div className={`card card--${color}`}>
+      <h3 className='card__title '>{type}</h3>
+      <Counter maxNum={{ ...number }.value} />
     </div>
   );
 };

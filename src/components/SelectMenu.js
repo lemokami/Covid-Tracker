@@ -9,8 +9,14 @@ const SelectMenu = ({ countryList, getCountryData }) => {
     getCountryData(e.target.value);
   }
   return (
-    <>
-      <select value={location} onChange={changeLoc}>
+    <div className='menu'>
+      <label htmlFor='location'>Location: </label>
+      <select
+        value={location}
+        onChange={changeLoc}
+        id='location'
+        className='menu__select'
+      >
         <option value=''>Global</option>
         {countryList.map((country) => (
           <option value={country} key={country}>
@@ -18,7 +24,7 @@ const SelectMenu = ({ countryList, getCountryData }) => {
           </option>
         ))}
       </select>
-    </>
+    </div>
   );
 };
 
