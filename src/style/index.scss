@@ -102,6 +102,23 @@ body {
   }
 }
 
+.footer {
+  color: $color-grey;
+  font-size: 1rem;
+  position: absolute;
+  bottom: 10px;
+
+  a {
+    text-decoration: none;
+    color: $color-green;
+    transition: all 0.5s ease;
+  }
+
+  a:hover {
+    border-bottom: 1px solid $color-red;
+  }
+}
+
 //mobile & tab styles
 @media only screen and (max-width: 1240px) {
   .container {

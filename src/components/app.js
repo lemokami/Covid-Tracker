@@ -43,6 +43,12 @@ const App = () => {
           <Card color='green' type='Recovered' number={data.recovered} />
         </div>
       </div>
+      <div className='footer'>
+        Made with 💙 by{' '}
+        <a href='https://github.com/lemokami' target='blank'>
+          lemokami
+        </a>
+      </div>
     </div>
   );
 };
