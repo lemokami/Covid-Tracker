@@ -105,8 +105,8 @@ body {
 .footer {
   color: $color-grey;
   font-size: 1rem;
-  position: absolute;
-  bottom: 10px;
+  margin: 20px auto;
+  padding: 20px;
 
   a {
     text-decoration: none;
