@@ -47,6 +47,7 @@ body {
 .menu {
   text-align: center;
   &__select {
+    background-color: $color-secondary;
     padding: 10px;
     border: 0;
     border-bottom: 2px solid $color-primary;
@@ -66,6 +67,7 @@ body {
   padding: 30px;
   height: 200px;
   min-width: 400px;
+  margin: 0 10px;
   border-radius: 20px;
 
   //parent style but has the same name
