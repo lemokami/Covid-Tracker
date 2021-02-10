@@ -1,16 +1,16 @@
 {
-  "name": "covid-tracker",
+  "name": "covid-tracker by lemokami",
   "short_name": "covid-tracker",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#fff",
-  "theme_color": "#673ab8",
+  "background_color": "#fafafa",
+  "theme_color": "#1a1a1a",
   "icons": [
     {
-      "src": "/assets/icons/android-chrome-192x192.png",
+      "src": "/assets/icons/android-chrome-128x128.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "128x128"
     },
     {
       "src": "/assets/icons/android-chrome-512x512.png",
