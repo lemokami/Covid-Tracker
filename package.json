@@ -6,7 +6,7 @@
   "scripts": {
     "build": "preact build && rm build/*.map && rm build/**/*.map",
     "serve": "sirv build --port 8080 --cors --single",
-    "dev": "preact watch",
+    "dev": "preact watch && rm build/*.map",
     "lint": "eslint src",
     "test": "jest"
   },
